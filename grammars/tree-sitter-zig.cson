@@ -92,6 +92,7 @@ scopes:
     '"stdcallcc"' : 'storage.modifier.stdcallcc'
     '"threadlocal"' : 'storage.modifier.threadlocal'
 
+    '"try"'      : 'keyword.control.try'
     '"switch"'   : 'keyword.control.switch'
     '"if"'       : 'keyword.control.if'
     '"else"'     : 'keyword.control.else'
