@@ -1,0 +1,191 @@
+'.source.zig':
+  'const':
+    prefix: 'const'
+    body: 'const ${1:name} = ${2:body}'
+  'var':
+    prefix: 'var'
+    body: 'var ${1:name} = ${2:body}'
+  'struct':
+    prefix: 'struct'
+    body: '''
+      struct {
+      \t${1:body}
+      }
+    '''
+  'enum':
+    prefix: 'enum'
+    body: '''
+      enum {
+      \t${1:body}
+      }
+    '''
+  'enumType':
+    prefix: 'enumT'
+    body: '''
+      enum (${1:type}) {
+      \t${2:body}
+      }
+    '''
+  'union':
+    prefix: 'union'
+    body: '''
+      union {
+      \t${1:body}
+      }
+    '''
+  'taggedUnion':
+    prefix: 'unionT'
+    body: '''
+      union (${1:enum}) {
+      \t${2:body}
+      }
+    '''
+  'error':
+    prefix: 'error'
+    body: '''
+      error {
+      \t${1:body}
+      }
+    '''
+  'while':
+    prefix: 'while'
+    body: '''
+      while (${1:cond}) {
+      \t${2:body}
+      }
+    '''
+  'while-else':
+    prefix: 'while-else'
+    body: '''
+      while (${1:cond}) {
+      \t${2:body}
+      } else $3 {
+      \t$4
+      }
+    '''
+  'whileContinue':
+    prefix: 'while-continue'
+    body: '''
+      while (${1:cond}) : (${2:continue_expr}) {
+      \t${3:body}
+      }
+    '''
+  'whileContinue-else':
+    prefix: 'while-continue-else'
+    body: '''
+      while (${1:cond}) : (${2:continue_expr}) {
+      \t${3:body}
+      } else $4 {
+      \t$5
+      }
+    '''
+  'for':
+    prefix: 'for'
+    body: '''
+      for (${1:collection}) |${2:value}| {
+      \t${3:body}
+      }
+    '''
+  'for-else':
+    prefix: 'for-else'
+    body: '''
+      for (${1:collection}) |${2:value}| {
+      \t${3:body}
+      } else $4 {
+      \t$5
+      }
+    '''
+  'if':
+    prefix: 'if'
+    body: '''
+      if (${1:cond}) {
+      \t${2:body}
+      }
+    '''
+  'if-else':
+    prefix: 'if-else'
+    body: '''
+      if (${1:cond}) {
+      \t${2:body}
+      } else {
+      \t$3
+      }
+    '''
+  'if-elseif-else':
+    prefix: 'if-elseif-else'
+    body: '''
+      if (${1:cond}) {
+      \t${2:body}
+      } else if {
+      \t$3
+      } else {
+      \t$4
+      }
+    '''
+  'if-optional':
+    prefix: 'if-optional'
+    body: '''
+      if (${1:expr}) |${2:value}| {
+      \t${3:body}
+      } else {
+      \t$4
+      }
+    '''
+  'if-error':
+    prefix: 'if-error'
+    body: '''
+      if (${1:expr}) |${2:value}| {
+      \t${3:body}
+      } else |${4:err}| {
+      \t$5
+      }
+    '''
+  'switch':
+    prefix: 'switch'
+    body: '''
+      switch (${1:expr}) {
+      \t$2
+      }
+    '''
+  'comptime':
+    prefix: 'comptime'
+    body: '''
+      comptime {
+      \t${1:body}
+      }
+    '''
+  'defer':
+    prefix: 'defer'
+    body: '''
+      defer {
+      \t${1:body}
+      }
+    '''
+  'errdefer':
+    prefix: 'errdefer'
+    body: '''
+      errdefer {
+      \t${1:body}
+      }
+    '''
+  'function'
+    prefix: 'fn'
+    body: '''
+      fn ${1:name}($2){
+      \t${3:undefined}
+      }
+    '''
+  'functionReturn'
+    prefix: 'fn-return'
+    body: '''
+      fn ${1:name}($2) ${3:type} {
+      \t${4:undefined}
+      }
+    '''
+  'test':
+    prefix: 'test'
+    body: '''
+      test "${1:test name}" {
+      \t${2:undefined}
+      }
+    '''
