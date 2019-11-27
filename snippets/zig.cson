@@ -168,14 +168,14 @@
       \t${1:body}
       }
     '''
-  'function'
+  'function':
     prefix: 'fn'
     body: '''
       fn ${1:name}($2){
       \t${3:undefined}
       }
     '''
-  'functionReturn'
+  'functionReturn':
     prefix: 'fn-return'
     body: '''
       fn ${1:name}($2) ${3:type} {

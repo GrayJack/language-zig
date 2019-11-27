@@ -28,8 +28,9 @@ folds: [
 scopes:
     'source_file' : 'source.zig'
 
-    'type_identifier' : 'support.type.other'
     'primitive_type' : 'support.type.primitive'
+    'inference_type' : 'support.type.inference'
+    'type_identifier' : 'support.type.other'
     'custom_number_type' : 'support.type.custom-number'
 
     '''
