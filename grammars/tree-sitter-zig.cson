@@ -59,7 +59,6 @@ scopes:
     '''
       usingnamespace_expression > identifier,
       field_expression > identifier,
-      field_expression > field_identifier,
       struct_construction > identifier,
     ''' : [
       {match: '^[A-Z\\d_]{2,}$', scopes: 'constant.other'},
