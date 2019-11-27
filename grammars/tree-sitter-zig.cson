@@ -72,13 +72,6 @@ scopes:
       loop_label_inverse
     ''' : 'entity.name.loop-label'
 
-    '''
-      slice_pattern > "..",
-      range_pattern > "...",
-    ''' : 'keyword.operator.ranges'
-
-    'switch_arm > "=>", last_switch_arm > "=>"' : 'keyword.operator.switch-arm'
-
     '"const"'  : 'storage.modifier.const'
     '"var"'    : 'storage.modifier.var'
     '"fn"'     : 'storage.modifier.fn'
@@ -112,7 +105,12 @@ scopes:
     ''' : 'keyword.operator.pointer'
 
     '"="' : 'keyword.operator.assign'
-    '":"' : 'keyword.operator.constraint'
+    '''
+      assignment_statement > ":",
+      parameter > ":",
+      while_expression > ":",
+      union_field_variant > ":",
+    ''' : 'keyword.operator.constraint'
     '"&"' : 'keyword.operator.unary.reference'
     '".*"' : 'keyword.operator.postfix.deference'
     '".?"' : 'keyword.operator.postfix.orelse'
@@ -123,6 +121,13 @@ scopes:
     'binary_operator' : 'keyword.operator.binary'
     'unary_operator'  : 'keyword.operator.unary'
     'assignment_operator' : 'keyword.operator.assignment'
+
+    '''
+      slice_pattern > "..",
+      range_pattern > "...",
+    ''' : 'keyword.operator.ranges'
+
+    'switch_arm > "=>", last_switch_arm > "=>"' : 'keyword.operator.switch-arm'
 
     'multiline_string_literal' : 'string.multiline'
     'char_literal'       : 'string.quoted.single'
