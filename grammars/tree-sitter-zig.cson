@@ -65,7 +65,11 @@ scopes:
       {match: '^[A-Z]', scopes: 'support.type.other'},
     ]
 
-    '''parameter > identifier, variadic_parameter''' : 'entity.name.variable.parameter'
+    '''
+      parameter > identifier,
+      variadic_parameter,
+      payload_identifier
+    ''' : 'entity.name.variable.parameter'
 
     '''
       loop_label,
