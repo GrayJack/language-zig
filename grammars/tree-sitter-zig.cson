@@ -1,0 +1,130 @@
+name: 'Zig'
+scopeName: 'source.zig'
+type: 'tree-sitter'
+parser: 'tree-sitter-zig'
+
+fileTypes: [
+  'zig'
+]
+
+comments:
+  start: '// '
+
+folds: [
+  {
+    start: {index: 0, type: '{'}
+    end: {index: -1, type: '}'}
+  }
+  {
+    start: {index: 0, type: '['}
+    end: {index: -1, type: ']'}
+  }
+  {
+    start: {index: 0, type: '('}
+    end: {index: -1, type: ')'}
+  }
+]
+
+scopes:
+    'source_file' : 'source.zig'
+
+    'type_identifier' : 'support.type.other'
+    'primitive_type' : 'support.type.primitive'
+    'custom_number_type' : 'support.type.custom-number'
+
+    '''
+      function_signature > identifier,
+      function_declaration > identifier,
+    ''' : 'entity.name.function.def'
+
+    'call_expression > identifier' : 'entity.name.function.call'
+
+    '''
+      build_in_call_expr > "@",
+      build_in_call_expr > identifier,
+    ''' : 'entity.name.function.call.buildin'
+
+    '''
+      field_identifier,
+      error_identifier,
+      enum_identifier,
+      union_identifier,
+    ''' : 'variable.other.member'
+
+    '''
+      usingnamespace_expression > identifier,
+      field_expression > identifier,
+      struct_construction > identifier,
+    ''' : [
+      {match: '^[A-Z\\d_]{2,}$', scopes: 'constant.other'},
+      {match: '^[A-Z]', scopes: 'support.type'},
+    ]
+
+    '''parameter > identifier, variadic_parameter''' : 'entity.name.variable.parameter'
+
+    '''
+      loop_label,
+      loop_label_inverse
+    ''' : 'entity.name.loop-label'
+
+    '''
+      slice_pattern > "..",
+      range_pattern > "...",
+    ''' : 'keyword.operator.ranges'
+
+    'switch_arm > "=>", last_switch_arm > "=>"' : 'keyword.operator.switch-arm'
+
+    '"const"'  : 'storage.modifier.const'
+    '"var"'    : 'storage.modifier.var'
+    '"fn"'     : 'storage.modifier.fn'
+    '"extern"' : 'storage.modifier.extern'
+    '"pub"'    : 'storage.modifier.pub'
+    '"struct"' : 'storage.modifier.struct'
+    '"enum"'   : 'storage.modifier.enum'
+    '"union"'  : 'storage.modifier.union'
+    '"export"' : 'storage.modifier.export'
+    '"inline"' : 'storage.modifier.inline'
+    '"nakedcc"' : 'storage.modifier.nakedcc'
+    '"comptime"' : 'storage.modifier.comptime'
+    '"stdcallcc"' : 'storage.modifier.stdcallcc'
+    '"threadlocal"' : 'storage.modifier.threadlocal'
+
+    '"switch"'   : 'keyword.control.switch'
+    '"if"'       : 'keyword.control.if'
+    '"else"'     : 'keyword.control.else'
+    '"while"'    : 'keyword.control.while'
+    '"for"'      : 'keyword.control.for'
+    '"return"'   : 'keyword.control.return'
+    '"continue"' : 'keyword.control.continue'
+    '"break"'    : 'keyword.control.break'
+    'payload > "|"' : 'keyword.control.payload'
+
+    '''
+        payload > "*",
+        pointer_type > "*",
+        array_type > pointer,
+    ''' : 'keyword.operator.pointer'
+
+    '"="' : 'keyword.operator.assign'
+    '":"' : 'keyword.operator.constraint'
+    '"&"' : 'keyword.operator.unary.reference'
+    '".*"' : 'keyword.operator.postfix.deference'
+    '".?"' : 'keyword.operator.postfix.orelse'
+
+    'error_type > "!"' : 'keyword.operator.binary.error-set'
+    'optional_type > "?"' : 'keyword.operator.unary.optional'
+
+    'binary_operator' : 'keyword.operator.binary'
+    'unary_operator'  : 'keyword.operator.unary'
+    'assignment_operator' : 'keyword.operator.assignment'
+
+    'multiline_string_literal' : 'string.multiline'
+    'char_literal'       : 'string.quoted.single'
+    'string_literal'     : 'string.quoted.double'
+    'boolean_literal'    : 'constant.language.boolean'
+    'integer_literal'    : 'constant.numeric.decimal'
+    'float_literal'      : 'constant.numeric.decimal'
+    'null_literal'       : 'constant.null'
+    'undefined_literal'  : 'constant.undefined'
+    'escape_sequence'    : 'constant.character.escape'
+    'unary_expression > unary_operator > "-"' : 'constant.numeric.neg'
