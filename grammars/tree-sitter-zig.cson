@@ -45,19 +45,25 @@ scopes:
     ''' : 'entity.name.function.call.buildin'
 
     '''
-      field_identifier,
       error_identifier,
       enum_identifier,
       union_identifier,
     ''' : 'variable.other.member'
 
+    'field_identifier' : [
+      {match: '^[A-Z\\d_]{2,}$', scopes: 'constant.other'},
+      {match: '^[A-Z]', scopes: 'support.type.other'},
+      'variable.other.member'
+    ]
+
     '''
       usingnamespace_expression > identifier,
       field_expression > identifier,
+      field_expression > field_identifier,
       struct_construction > identifier,
     ''' : [
       {match: '^[A-Z\\d_]{2,}$', scopes: 'constant.other'},
-      {match: '^[A-Z]', scopes: 'support.type'},
+      {match: '^[A-Z]', scopes: 'support.type.other'},
     ]
 
     '''parameter > identifier, variadic_parameter''' : 'entity.name.variable.parameter'
@@ -97,6 +103,7 @@ scopes:
     '"return"'   : 'keyword.control.return'
     '"continue"' : 'keyword.control.continue'
     '"break"'    : 'keyword.control.break'
+    '"usingnamespace"' : 'keyword.control.usingnamespace'
     'payload > "|"' : 'keyword.control.payload'
 
     '''
