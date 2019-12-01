@@ -61,6 +61,7 @@ scopes:
     ]
 
     '''
+      assignment_statement > identifier:nth-child(0),
       usingnamespace_expression > identifier,
       field_expression > identifier,
       struct_construction > identifier,
