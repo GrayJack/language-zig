@@ -97,6 +97,8 @@ scopes:
 
     '"try"'      : 'keyword.control.try'
     '"switch"'   : 'keyword.control.switch'
+    '"defer"'    : 'keyword.control.defer'
+    '"errdefer"' : 'keyword.control.errdefer'
     '"if"'       : 'keyword.control.if'
     '"else"'     : 'keyword.control.else'
     '"while"'    : 'keyword.control.while'
