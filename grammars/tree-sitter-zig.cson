@@ -28,6 +28,9 @@ folds: [
 scopes:
     'source_file' : 'source.zig'
 
+    'line_comment' : 'comment.block.line'
+    'doc_comment'  : 'comment.block.doc'
+
     'primitive_type' : 'support.type.primitive'
     'inference_type' : 'support.type.inference'
     'type_identifier' : 'support.type.other'
