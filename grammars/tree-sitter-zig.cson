@@ -98,6 +98,8 @@ scopes:
     '"threadlocal"' : 'storage.modifier.threadlocal'
 
     '"try"'      : 'keyword.control.try'
+    '"suspend"'  : 'keyword.control.suspend'
+    '"resume"'   : 'keyword.control.resume'
     '"await"'    : 'keyword.control.await'
     '"switch"'   : 'keyword.control.switch'
     '"defer"'    : 'keyword.control.defer'
