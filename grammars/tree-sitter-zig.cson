@@ -98,7 +98,7 @@ scopes:
     '"threadlocal"' : 'storage.modifier.threadlocal'
 
     '"try"'      : 'keyword.control.try'
-    '"await"'    : 'kayword.control.await'
+    '"await"'    : 'keyword.control.await'
     '"switch"'   : 'keyword.control.switch'
     '"defer"'    : 'keyword.control.defer'
     '"errdefer"' : 'keyword.control.errdefer'
