@@ -81,6 +81,7 @@ scopes:
       loop_label_inverse
     ''' : 'entity.name.loop-label'
 
+    '"async"'  : 'storage.modifier.async'
     '"const"'  : 'storage.modifier.const'
     '"var"'    : 'storage.modifier.var'
     '"fn"'     : 'storage.modifier.fn'
@@ -97,6 +98,7 @@ scopes:
     '"threadlocal"' : 'storage.modifier.threadlocal'
 
     '"try"'      : 'keyword.control.try'
+    '"await"'    : 'kayword.control.await'
     '"switch"'   : 'keyword.control.switch'
     '"defer"'    : 'keyword.control.defer'
     '"errdefer"' : 'keyword.control.errdefer'
