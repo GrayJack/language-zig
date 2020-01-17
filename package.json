@@ -13,9 +13,9 @@
   "repository": "https://github.com/GrayJack/language-zig",
   "license": "MIT",
   "dependencies": {
-    "tree-sitter-zig": "0.1.0"
+    "tree-sitter-zig": "0.2.0"
   },
   "engines": {
-    "atom": ">=1.40.0 <2.0.0"
+    "atom": ">=1.43.0 <2.0.0"
   }
 }
