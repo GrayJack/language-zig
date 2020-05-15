@@ -114,6 +114,15 @@ scopes:
     '"usingnamespace"' : 'keyword.control.usingnamespace'
     'payload > "|"' : 'keyword.control.payload'
 
+    '";"': 'punctuation.terminator.statement'
+    '"["': 'punctuation.definition.begin.bracket.square'
+    '"]"': 'punctuation.definition.end.bracket.square'
+    '","': 'punctuation.separator.delimiter'
+    '"{"': 'punctuation.section.block.begin.bracket.curly'
+    '"}"': 'punctuation.section.block.end.bracket.curly'
+    '"("': 'punctuation.section.parens.begin.bracket.round'
+    '")"': 'punctuation.section.parens.end.bracket.round'
+
     '''
         payload > "*",
         pointer_type > "*",
